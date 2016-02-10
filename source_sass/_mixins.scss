@@ -1,0 +1,94 @@
+@mixin border-radius($width, $left, $height, $color) {
+    content: "";
+    position: absolute;
+    width: $width;
+    height: $height;
+    bottom: 0;
+    left: $left;
+    border-bottom: 3px solid $color;
+}
+
+@mixin media($queryString){
+    @media #{$queryString} {
+            @content;
+    }
+}
+
+@mixin float(){
+    float: left;
+    position: relative;
+}
+
+@mixin floatRight(){
+    float: right;
+    position: relative;
+}
+
+@mixin navs($left, $width){
+    @include floatRight();
+    color: $light-pink;
+    top: 50%;
+    margin-top:-13px;
+    margin-right: $left;
+    width: $width;
+    
+    #last{
+        margin-right: 0px;
+    }
+    
+    
+}
+
+@mixin nav($right, $font-size){
+    .nav{
+        @include float();
+        color: $light-pink;
+        margin-right: $right;
+        font-weight: bold;
+        font-family: $font-primary;
+        font-size: $font-size;
+    }
+}
+
+@mixin nav_underline(){
+    .nav:after {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 0;
+        height: 3px;
+        background-color: $pink;
+        content: "";
+        transition: width 0.2s;
+    }
+    .nav:hover {
+        color: $pink;
+    }
+    .nav:hover:after {
+        width: 100%;
+    }
+    
+}
+
+@mixin nav_clicked(){
+    .nav.expanded:after{
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 100%;
+        height: 3px;
+        background-color: $pink;
+        content: "";
+    }
+    .nav.expanded{
+        color: $pink;
+    }
+}
+
+
+
+
+
+
