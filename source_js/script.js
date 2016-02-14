@@ -39,7 +39,7 @@ $(document).ready(function(){
 var horizNav = function(){
         
         //$(".nav").data('clicked', false);
-        start = [0, 1060, 1675, 6500];
+        start = [0, 1060, 1675, 4800];
         $(".nav").each(function(index){
            $(this).data('scroll_h', start[index]);    
         });
@@ -62,6 +62,53 @@ var horizNav = function(){
             });
             
         });
+        $("#button").on("click", function(){
+            $('html, body').animate({
+                scrollTop: 1675
+            }, 1000, function(){
+                //setTimeout(function(){
+                    jumped = 0;
+                    //console.log("can jump");
+                //}, 1000);
+            });
+        });
+        $("#arrow").on("click", function(){
+            $('html, body').animate({
+                scrollTop: 1060
+            }, 1000, function(){
+                //setTimeout(function(){
+                    jumped = 0;
+                    //console.log("can jump");
+                //}, 1000);
+            });
+        });
+        $("#footer #top p").on("click", function(){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 1000, function(){
+                //setTimeout(function(){
+                    jumped = 0;
+                    //console.log("can jump");
+                //}, 1000);
+            });
+        });
+    
+        start1 = [0, 1060, 1675];
+        $("#footer #menu ul li").each(function(index){
+           $(this).data('scroll_h', start[index]);    
+        });
+        
+        
+         $("#footer #menu ul li").on("click", function(){
+                $('html, body').animate({
+                    scrollTop: $(this).data('scroll_h')
+                }, 1000, function(){
+                    //setTimeout(function(){
+                        jumped = 0;
+                        //console.log("can jump");
+                    //}, 1000);
+                });
+            });
 }
 
 var navscrollfunc = function(){
@@ -77,8 +124,8 @@ var navscrollfunc = function(){
             $("#header").css('height', '90px');
         }
         if(jumped == 0){
-            console.log("here");
-            height = [1060, 1675, 6000, 6500]
+            //console.log("here");
+            height = [1060, 1675, 4800, 5600]
             $(".nav").each(function(index){
                 scroll_h = height[index];
                 //scroll_h = parseInt($(this).data('scroll_h'));    
@@ -125,7 +172,7 @@ var navscrollfunc = function(){
 var fixedText = function(){
     $(document).on('scroll', function(){
         //value = $(window).scrollTop();
-        if(value > 1664 && value <3000){
+        if(value > 1664 && value <4200){
             //old_v = $("#topList").css('margin-top');
             //new_v = parseInt(old_v)+value;
             //console.log(new_v);
@@ -139,9 +186,9 @@ var fixedText = function(){
                 paddingTop: new_v1
             }, 30);
             console.log(new_v1);*/
-        }else if(value >= 3000){
-           $(".here").css('top', '3030px');
-            $("#topList").css('top', '3050px');
+        }else if(value >= 4200){
+           $(".here").css('top', '4230px');
+            $("#topList").css('top', '4250px');
         }else{
             $(".here").css('padding-top', '50px');
             $("#topList").css('padding-top', '60px');
@@ -159,14 +206,16 @@ var helper = function(top, bottom, value, self){
 }
 
 var videoPlay = function(){
+    height1=[1770, 2200, 2765, 3252, 3898, 4299, 4900];
+    
     $(document).on('scroll', function(){
         value = $(window).scrollTop();
         console.log(value);
         $("video").each(function(index){
             self = this;
-            topline = parseInt(index)*450+1775;
-            bottom = topline + 449;
-            //console.log(value+", "+topline + ", " + bottom);
+            topline = height1[index]+1;
+            bottom = height1[index+1];
+            console.log(index+": "+value+", "+topline + ", " + bottom);
             helper(topline, bottom, value, this);
         });
     });

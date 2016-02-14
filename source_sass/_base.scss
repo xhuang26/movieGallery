@@ -357,16 +357,15 @@ body{
 
 #gallery{
     background-color: white;
-    height: 5000px;
+    height: 3378px;
     #title{
         font-family: $font-primary;
         font-weight: bold;
         font-size: 5em;
         width: 700px;
-        letter-spacing: 50px;
+        letter-spacing: 60px;
         margin-left: 200px;
         position: absolute;
-        border: 1px solid $pink;
         #color{
             color: $pink;
         }
@@ -390,7 +389,7 @@ body{
         height: auto;
         font-family: $font-primary;
         margin-top: 60px;
-        margin-left: 900px;
+        margin-left: 980px;
         position: absolute;
         ul{
             line-height: 300%;
@@ -427,6 +426,128 @@ body{
 }
 #footer{
     background-color: black;
-    height: 300px;
+    height: 600px;
     margin-top: -5px;
+    #personal{
+        position: relative;
+        left: 50px;
+        top: 200px;
+        width: 400px;
+        height: 300px;
+        p{
+            margin-left: 30px;
+            padding-top: 50px;
+        }
+        #name{
+            font-family: $font-primary;
+            letter-spacing: 7px;
+            color: $pink;
+            font-weight: bold;
+            font-size: 1.5em;
+            line-height: 1.2em;
+        }
+        #name:before{
+            @include border-radius(10%, 0, 1px, $pink);
+            top: 114px;
+            left: 30px;
+        }
+        #info{
+            padding-top: 25px;
+            font-family: $font-primary;
+            letter-spacing: 7px;
+            color: $pink;
+            line-height: 1.7em;
+            b{
+                font-weight: bold;
+            }
+        }
+    }
+    #newsletter{
+        position: relative;
+        left: 500px;
+        top: -100px;
+        width: 600px;
+        height: 300px;
+        p{
+            margin-left: 30px;
+            padding-top: 50px;
+        }
+        #name{
+            font-family: $font-primary;
+            letter-spacing: 7px;
+            color: $pink;
+            font-weight: bold;
+            font-size: 1.5em;
+            line-height: 1.2em;
+        }
+        #name:before{
+            @include border-radius(10%, 0, 1px, $pink);
+            top: 114px;
+            left: 30px;
+        }
+        #searchBox{
+            white-space: nowrap;
+            position: relative;
+            top:30px;
+            left: 30px;
+            #search{
+                width: 400px;
+                height: 40px;
+                border: 2px solid $pink;
+                background-color: black;
+                border-radius: 2px;
+            }
+        }
+        #imgs{
+            width: 500px;
+            height: 50px;
+            padding-top: 30px;
+            margin-left: 22px;
+            img{
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    #menu{
+       position: relative;
+        top: -600px;
+        left: 1260px;
+        width: 100px;
+        height: 200px;
+        ul{
+            padding-top: 20px;
+            li{
+                font-family: $font-primary;
+                color: $pink;
+                padding-top: 15px;
+                letter-spacing: 4px;
+                b{
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+            }
+            li:hover{
+            color: $light-pink;
+        }
+        }
+    }
+    #top{
+       position: relative;
+        top: -300px;
+        left: 1160px;
+        width: 200px;
+        height: 70px;
+        
+        p{
+            font-family: $font-primary;
+            color: $pink;
+            letter-spacing: 4px;
+            padding-left: 50px;
+            padding-top: 30px;
+        }
+        p:hover{
+            color: $light-pink;
+        }
+    }
 }
