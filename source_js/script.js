@@ -1,31 +1,12 @@
-/*var divs = document.getElementsByTagName('div');
-for(var i=0; i<divs.length; i++) {
-  divs[i].addEventListener("click", highlightThis);
-  
-  divs[i].addEventListener("click", highlightThis, true);
-  divs[i].addEventListener("click", highlightThis, false);
-}
 
-function highlightThis(event) {
-    //event.stopPropagation();
-
-    var backgroundColor = this.style.backgroundColor;
-    this.style.backgroundColor='yellow';
-    alert(this.className);
-    this.style.backgroundColor=backgroundColor;
-}*/
 
 var jumped = 0;
-/*callbacks = $.Callbacks();
-function jump(value){
-    jumped = value;
-}
-function scrolled(scrolled_h){
-    $('html, body').animate({
-        scrollTop: scrolled_h
-    }, 1000);
-}*/
 
+
+$(window).load(function(){
+    $("#dvLoading i").fadeOut(3000);
+    $("#dvLoading").fadeOut(5000);
+});
 
 $(document).ready(function(){
     
@@ -141,33 +122,6 @@ var navscrollfunc = function(){
     });
         
         
-        /*if(!jumped){   
-            value = $(window).scrollTop();
-            if(value>2500){
-                $(".nav").css('background-color', 'transparent');
-                $(".nav").css('color', 'white');
-                $(".nav").data('clicked', false);
-                $("#nav3").css('background-color', 'white');
-                $("#nav3").css('color', '#d73b3c');
-                $("#nav3").data('clicked', true);
-            }else if(value>1900){
-                $(".nav").css('background-color', 'transparent');
-                $(".nav").css('color', 'white');
-                $(".nav").data('clicked', false);
-                $("#nav2").css('background-color', 'white');
-                $("#nav2").css('color', '#d73b3c');
-                $("#nav2").data('clicked', true);
-            }else{
-
-                $(".nav").css('background-color', 'transparent');
-                $(".nav").css('color', 'white');
-                $(".nav").data('clicked', false);
-                $("#nav1").css('background-color', 'white');
-                $("#nav1").css('color', '#d73b3c');
-                $("#nav1").data('clicked', true);
-            }
-        }
-        jumped = 0;*/
 }
 
 var fixedText = function(){
@@ -309,8 +263,6 @@ var modal = function(){
     $("#gallery #topList #modal #content #close").on("click", function(){
         $("#gallery #topList #modal").css("display", "none"); 
     });
-    /*$(window).on("click", function(){
-        modal.css("display", "none"); 
-    });*/
+    
 }
 
