@@ -34,6 +34,7 @@ $(document).ready(function(){
     fixedText();
     videoPlay();
     slider();
+    modal();
 });
 
 var horizNav = function(){
@@ -62,7 +63,7 @@ var horizNav = function(){
             });
             
         });
-        $("#button").on("click", function(){
+        $("#subTitle #button").on("click", function(){
             $('html, body').animate({
                 scrollTop: 1675
             }, 1000, function(){
@@ -210,12 +211,12 @@ var videoPlay = function(){
     
     $(document).on('scroll', function(){
         value = $(window).scrollTop();
-        console.log(value);
+        //console.log(value);
         $("video").each(function(index){
             self = this;
             topline = height1[index]+1;
             bottom = height1[index+1];
-            console.log(index+": "+value+", "+topline + ", " + bottom);
+            //console.log(index+": "+value+", "+topline + ", " + bottom);
             helper(topline, bottom, value, this);
         });
     });
@@ -292,5 +293,24 @@ var slider = function(){
     });
    
 
+}
+
+var modal = function(){
+    //var modal = $("#gallery #toplist #modal");
+   // console.log(modal);
+    //var btn = $("#gallery #toplist #button");
+    //console.log(btn.html());
+    //var close = $("#gallery #toplist #modal #close");
+    $("#topList #button").on("click", function(){
+        //console.log("get here");
+        //$("#topList ").css("background-color", "red");
+        $("#gallery #topList #modal").css("display", "block"); 
+    });
+    $("#gallery #topList #modal #content #close").on("click", function(){
+        $("#gallery #topList #modal").css("display", "none"); 
+    });
+    /*$(window).on("click", function(){
+        modal.css("display", "none"); 
+    });*/
 }
 
