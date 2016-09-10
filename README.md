@@ -1,4 +1,4 @@
-# Starter files for MP1
+# Movie Gallery
 This is a simple movie website. This project is mainly focused on front-end with exploration of design principles
 
 Use the following commands in your vagrant development environment to get this up and running
