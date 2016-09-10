@@ -1,4 +1,6 @@
 # Starter files for MP1
+This is a simple movie website. This project is mainly focused on front-end with exploration of design principles
+
 Use the following commands in your vagrant development environment to get this up and running
 ```bash
 git clone https://github.com/uiuc-web-programming/mp1_starter.git
